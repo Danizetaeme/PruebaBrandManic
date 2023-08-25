@@ -138,7 +138,6 @@ body {
     font-family: 'Montserrat';
     font-weight: 300;
     color: rgb(95, 95, 95);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .icon-blue {
@@ -146,8 +145,6 @@ body {
     margin-right: 10px;
     /* Espacio entre el icono y el texto */
 }
-
-
 
 
 
@@ -193,10 +190,6 @@ body {
 .icon-grey {
     color: rgb(95, 95, 95);
 }
-
-
-
-
 
 
 .audiencia-uno {
