@@ -1,0 +1,407 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.detalle-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(243, 243, 243);
+    padding: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Estilos para la imagen de perfil en el circulo */
+.imagen-circulo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.imagen-circulo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Container 1 info del usuario */
+.info-usuario {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+
+}
+
+.info-usuario h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+    color: rgb(20, 20, 20);
+}
+
+.horizontal-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#perfil-ig {
+    color: #f4482e;
+    /* Cambiar color del texto a naranja */
+    text-decoration: none;
+    /* Quitar subrayado y estilo predefinido de link */
+}
+
+#perfil-ig i {
+    color: #f4482e;
+    /* Cambiar color del icono a naranja */
+}
+
+
+
+/* container 2 Loaders */
+.loaders-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.chart-percentage{
+    margin: auto;
+}
+
+.reach {
+    color: #0096c7;
+    font-weight: 400;
+    
+}
+
+.relevance {
+    color: #ffce56;
+    font-weight: 400;
+}
+
+.resonance {
+    color: #72ddf7;
+    font-weight: 400;
+}
+
+
+/* container 3 logout */
+.logout-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logout {
+    text-decoration: none;
+    color: black;
+}
+
+.logout:hover {
+    color: #e04c28;
+    transition: ease-in-out 0.2s;
+}
+
+.download-card {
+    cursor: pointer;
+}
+
+.download-card:hover {
+    color: #e04c28;
+    transition: ease-in-out 0.2s;
+}
+
+.perfil {
+    cursor: pointer;
+}
+
+.perfil:hover {
+    color: #e04c28;
+    transition: ease-in-out 0.2s;
+}
+
+
+
+/* ------------C O L U M N A S------------- */
+
+.detalle-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+
+}
+
+.columna-titulo {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    color: rgb(95, 95, 95);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.icon-blue {
+    color: #4185fb;
+    margin-right: 10px;
+    /* Espacio entre el icono y el texto */
+}
+
+
+
+
+
+
+/* C O L U M N A   A U D I E N C I A  */
+.columna-audiencia {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.audiencia-uno {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dato-valor {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4185fb;
+}
+
+.dato-titulo {
+    font-size: 14px;
+    color: rgb(95, 95, 95);
+    margin-bottom: 20px;
+}
+
+.icon-grey {
+    color: rgb(95, 95, 95);
+}
+
+
+
+
+
+
+.audiencia-uno {
+    margin-bottom: 20px;
+}
+
+/* GRAFICA DISTRIBUCIÓN EDAD */
+.grafica-edad {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+/* GRAFICA DISTRIBUCIÓN GÉNERO & PAÍS */
+
+.graficas-container {
+    display: flex;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Para asegurarse de que las gráficas se envuelvan si no caben en una fila */
+}
+
+/* Ajusta el tamaño de las gráficas */
+.grafica-genero,
+.grafica {
+    flex: 0 0 calc(10% - 10px);
+    margin-bottom: 20px;
+}
+
+
+
+
+/* C O L U M N A   P U B L I C A C I O N E S */
+
+.columna-publicaciones {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    margin-right: 20px;
+    text-align: center;
+}
+
+/* GRAFICA DISTRIBUCIÓN TERRITORIOS */
+.grafica-territorios {
+    max-width: 600px;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+}
+
+/* GRÁFICA FRANJA HORARIA */
+
+.grafica-franja-horaria {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    height: 300px;
+}
+
+
+/* LISTADO DE MARCAS TRABAJADAS */
+
+.marcas-container {
+    margin-top: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 300px;
+}
+
+.marcas-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.marcas-list li {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.marcas-list li img {
+    width: 80px;   
+    height: auto;
+}
+
+.titulo-marcas {
+    color: rgb(95, 95, 95);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+
+
+/* C O L U M N A    D E S E M P E Ñ O */
+
+.columna-desempeño {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* INFO #1 AUDIENCIA Y ALCANCE */
+.desempeño-container {
+    margin-top: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.desempenño-element {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.desempeño-element i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.desempeño-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4185fb;
+}
+
+/* INFO #2 IMPRESIONES */
+
+.desempeño-container-dos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.desempeño-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.custom-icon-color {
+    color: #023e8a;
+}
+
+/* INFO #3 REPRODUCCIONES */
+
+.desempeño-container-tres {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.custom-icon-color-dos {
+    color: #0077b6;
+}
+
+
+
+/* INFO #4 ENGAGEMENT */
+
+.desempeño-container-cuatro{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+
+.custom-icon-color-tres {
+    color: #0096c7;
+}
+
+
+/* INFO #5 ENGAGEMENT/DÍA*/
+
+.engagement-graph{
+   
+    width: 100%;
+    height: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+}

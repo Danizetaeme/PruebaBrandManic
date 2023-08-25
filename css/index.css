@@ -1,0 +1,81 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.mosaico {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+  gap: 20px; /* Mayor espacio entre las tarjetas */
+  padding: 20px;
+}
+
+.tarjeta {
+  background-color: rgba(0, 0, 0, 0.055);;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.izquierda {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.derecha {
+  flex: 1;
+  text-align: right;
+}
+.imagen-circulo {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: auto;
+  border: 2px solid #9feba1;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.imagen-circulo:hover {
+  background-color: rgba(255, 166, 0, 0.836); 
+  color: white; 
+}
+
+.imagen-circulo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.imagen-hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  color: white;
+  opacity: 0; /* El texto estará oculto por defecto */
+  transition: opacity 0.3s; /* Transición suave para mostrar/ocultar el texto */
+}
+
+.imagen-circulo:hover .imagen-hover-text {
+  opacity: 1; /* Mostrar el texto al hacer hover */
+}
+
+
+
+.iconos {
+  margin-top: 10px;
+  text-align: right;
+}
