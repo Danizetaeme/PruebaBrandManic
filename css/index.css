@@ -79,3 +79,19 @@ body {
   margin-top: 10px;
   text-align: right;
 }
+
+
+
+/* Responsive para pantallas medianas */
+@media (max-width: 768px) {
+  .mosaico {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+  .mosaico {
+    grid-template-columns: 1fr;
+  }
+}

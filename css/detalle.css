@@ -217,7 +217,7 @@ body {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
     flex-wrap: wrap;
-    /* Para asegurarse de que las gráficas se envuelvan si no caben en una fila */
+    
 }
 
 /* Ajusta el tamaño de las gráficas */
@@ -277,7 +277,6 @@ body {
 }
 
 .marcas-list li {
-    background-color: #f4f4f4;
     border-radius: 8px;
     font-size: 13px;
     color: #333;
@@ -405,3 +404,68 @@ body {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
     margin-top: 30px;
 }
+
+
+
+
+
+
+
+
+
+/* Responsive para pantallas medianas */
+@media (max-width: 768px) {
+    .detalle-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .info-usuario {
+      margin-top: 10px;
+    }
+  
+    .loaders-container {
+      display: none; /* Ocultar los loaders circulares en pantallas pequeñas */
+    }
+  
+    .logout-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .filtro-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .detalle-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .columna-audiencia,
+    .columna-publicaciones,
+    .columna-desempeño {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 480px) {
+    .detalle-header {
+      padding: 10px;
+    }
+
+    .columna-audiencia,
+    .columna-publicaciones,
+    .columna-desempeño {
+      width: 100%;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+
+  
+  }
+  
