@@ -156,8 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
             graficasContainer.appendChild(generoContainer);
 
             // Entrar dentro de insightsGender que es donde se encuentra esta info
-            const genderData = influencer.insightsGender;
-            console.log('genderData', genderData)
+            const genderData = influencer.insightsGender;          
             const totalFollowers = parseFloat(influencer.followers);
             const femalePercentage = (parseFloat(genderData.find(item => item.gender === "1").percentage)) || 0;
             const malePercentage = (parseFloat(genderData.find(item => item.gender === "0").percentage)) || 0;
@@ -201,10 +200,8 @@ document.addEventListener("DOMContentLoaded", function () {
             paisContainer.appendChild(canvasPais);
             graficasContainer.appendChild(paisContainer);
 
-            const distribucionPais = influencer.insightsCountry;
-            console.log("distribucion", distribucionPais)
+            const distribucionPais = influencer.insightsCountry;       
             const porcentajesPais = distribucionPais.map(item => parseFloat(item.percentage) || 0);
-            console.log("porcentaje", porcentajesPais)
             const paises = distribucionPais.map(item => item.country || "País Desconocido");
 
             // Ordenar los países y porcentajes de mayor a menor
@@ -475,11 +472,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Obtener valores de audiencia y alcance del archivo data.json
-            const audiencia = (parseFloat(data.influcard.followers) / 1000).toFixed(2) + "K";
-            console.log("audiencia", audiencia)
+            const audiencia = (parseFloat(data.influcard.followers) / 1000).toFixed(2) + "K";       
             const alcance = (parseFloat(data.influcard.uusers) / 1000).toFixed(2) + "K";
-            console.log("alcance", alcance)
-
+           
 
 
             // Crear contenedor de columna para audiencia
