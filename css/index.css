@@ -4,13 +4,13 @@ body {
 
 .mosaico {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
-  gap: 20px; /* Mayor espacio entre las tarjetas */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   padding: 20px;
 }
 
 .tarjeta {
-  background-color: rgba(0, 0, 0, 0.055);;
+  background-color: rgba(0, 0, 0, 0.055);
   border-radius: 8px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -32,28 +32,30 @@ body {
   flex: 1;
   text-align: right;
 }
+
 .imagen-circulo {
   position: relative;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 20% 50% 20% 50%; 
   overflow: hidden;
   margin-right: auto;
-  border: 2px solid #9feba1;
+  border: 2px solid #449679;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s; 
+  transition: background-color 0.3s, color 0.3s;
 }
 
+
 .imagen-circulo:hover {
-  background-color: rgba(255, 166, 0, 0.836); 
-  color: white; 
+  background-color: rgba(255, 166, 0, 0.836);
+  color: white;
 }
 
 .imagen-circulo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
+
 }
 
 .imagen-hover-text {
@@ -65,12 +67,15 @@ body {
   text-align: center;
   width: 100%;
   color: white;
-  opacity: 0; /* El texto estará oculto por defecto */
-  transition: opacity 0.3s; /* Transición suave para mostrar/ocultar el texto */
+  opacity: 0;
+  /* El texto estará oculto por defecto */
+  transition: opacity 0.3s;
+  /* Transición suave para mostrar/ocultar el texto */
 }
 
 .imagen-circulo:hover .imagen-hover-text {
-  opacity: 1; /* Mostrar el texto al hacer hover */
+  opacity: 1;
+  /* Mostrar el texto al hacer hover */
 }
 
 
@@ -81,6 +86,8 @@ body {
 }
 
 
+
+/* ------------M E D I A    Q U E R I E S------------ */
 
 /* Responsive para pantallas medianas */
 @media (max-width: 768px) {

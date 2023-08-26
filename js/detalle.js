@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Cargar los datos desde el JSON en los elementos del encabezado
             perfilImagen.src = "img/fake-influencer.jpg"; // Actualiza la ruta de la imagen si es necesario
             perfilUsername.textContent = influencer.name;
-
+     
             // Crear enlace y agregar icono de Instagram
             const perfilIgLink = document.createElement("a");
             perfilIgLink.href = `https://www.instagram.com/${influencer.username}`;
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
             graficasContainer.appendChild(generoContainer);
 
             // Entrar dentro de insightsGender que es donde se encuentra esta info
-            const genderData = influencer.insightsGender;          
+            const genderData = influencer.insightsGender;
             const totalFollowers = parseFloat(influencer.followers);
             const femalePercentage = (parseFloat(genderData.find(item => item.gender === "1").percentage)) || 0;
             const malePercentage = (parseFloat(genderData.find(item => item.gender === "0").percentage)) || 0;
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
             paisContainer.appendChild(canvasPais);
             graficasContainer.appendChild(paisContainer);
 
-            const distribucionPais = influencer.insightsCountry;       
+            const distribucionPais = influencer.insightsCountry;
             const porcentajesPais = distribucionPais.map(item => parseFloat(item.percentage) || 0);
             const paises = distribucionPais.map(item => item.country || "País Desconocido");
 
@@ -472,9 +472,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Obtener valores de audiencia y alcance del archivo data.json
-            const audiencia = (parseFloat(data.influcard.followers) / 1000).toFixed(2) + "K";       
+            const audiencia = (parseFloat(data.influcard.followers) / 1000).toFixed(2) + "K";
             const alcance = (parseFloat(data.influcard.uusers) / 1000).toFixed(2) + "K";
-           
+
 
 
             // Crear contenedor de columna para audiencia
