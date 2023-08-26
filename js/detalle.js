@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const perfilEdad = document.getElementById("perfil-edad");
 
             // Cargar los datos desde el JSON en los elementos del encabezado
-            perfilImagen.src = "img/fake-influencer.jpg"; // Actualiza la ruta de la imagen si es necesario
+            perfilImagen.src = "img/fake-influencer.jpg"; // Aqui iría la ruta de la foto desde el json
             perfilUsername.textContent = influencer.name;
-     
+
             // Crear enlace y agregar icono de Instagram
             const perfilIgLink = document.createElement("a");
             perfilIgLink.href = `https://www.instagram.com/${influencer.username}`;
-            perfilIgLink.target = "_blank"; // Abrir en una nueva pestaña
+            perfilIgLink.target = "_blank";
 
             const igIcon = document.createElement("i");
             igIcon.classList.add("fab", "fa-instagram");
@@ -104,7 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
             columnaAudiencia.appendChild(audienciaContainer);
 
 
-            // -------------GRÁFICA 2 DE BARRAS DE DISTRIBUCIÓN POR EDAD ------------------
+            // // -------------GRÁFICA 2 DE BARRAS DE DISTRIBUCIÓN POR EDAD ------------------
+
             const edadContainer = document.createElement("div");
             edadContainer.classList.add("grafica-edad");
 
@@ -112,18 +113,60 @@ document.addEventListener("DOMContentLoaded", function () {
             edadContainer.appendChild(canvas);
             columnaAudiencia.appendChild(edadContainer);
 
-            const edadData = influencer.insightsAge.map(item => ({
-                age_range: item.age_range,
-                percentage: parseFloat(item.percentage)
-            }));
+            const edadData = influencer.insightsAge.reduce((accumulator, item) => {
+                const ageRange = item.age_range;
+                const percentage = parseFloat(item.percentage);
+
+                // Agrupar los porcentajes por rango de edad
+                if (!accumulator[ageRange]) {
+                    accumulator[ageRange] = [];
+                }
+                accumulator[ageRange].push(percentage);
+
+                return accumulator;
+            }, {});
+
+            const edadMedias = {
+                "13-17": [],
+                "18-24": [],
+                "25-34": [],
+                "35-44": [],
+                "45-64": [],
+                "65+": []
+            };
+
+            Object.keys(edadData).forEach(ageRange => {
+                const percentages = edadData[ageRange];
+                const media = percentages.reduce((sum, percentage) => sum + percentage, 0) / percentages.length;
+
+                // Agrupar las medias en los nuevos rangos de edad
+                if (ageRange >= 13 && ageRange <= 17) {
+                    edadMedias["13-17"].push(media);
+                } else if (ageRange >= 18 && ageRange <= 24) {
+                    edadMedias["18-24"].push(media);
+                } else if (ageRange >= 25 && ageRange <= 34) {
+                    edadMedias["25-34"].push(media);
+                } else if (ageRange >= 35 && ageRange <= 44) {
+                    edadMedias["35-44"].push(media);
+                } else if (ageRange >= 45 && ageRange <= 64) {
+                    edadMedias["45-64"].push(media);
+                } else if (ageRange >= 65) {
+                    edadMedias["65+"].push(media);
+                }
+            });
+
+            const labels = ["13-17", "18-24", "25-34", "35-44", "45-64", "65+"];
 
             const edadChart = new Chart(canvas, {
                 type: "bar",
                 data: {
-                    labels: edadData.map(item => item.age_range),
+                    labels: labels,
                     datasets: [{
-                        label: "Distribución por Edad",
-                        data: edadData.map(item => item.percentage),
+                        label: "Media por Edad",
+                        data: labels.map(label => {
+                            const mediaArray = edadMedias[label];
+                            return mediaArray.reduce((sum, media) => sum + media, 0) / mediaArray.length;
+                        }),
                         backgroundColor: "rgba(75, 192, 192, 0.2)",
                         borderColor: "rgba(75, 192, 192, 1)",
                         borderWidth: 1
@@ -138,6 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
+
+
 
 
 
@@ -211,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const totalPorcentaje = sortedData.reduce((total, pais) => total + pais.porcentaje, 0);
 
             // Filtrar los países principales y agrupar los restantes en "Otros"
-            const numPaisesMostrados = 10; // Número de países principales a mostrar
+            const numPaisesMostrados = 10;
             const paisesPrincipales = sortedData.slice(0, numPaisesMostrados);
             const otrosPorcentaje = 100 - totalPorcentaje;
 
